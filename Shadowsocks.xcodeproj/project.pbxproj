@@ -84,7 +84,7 @@
 		D448563E263BD80A0057C3B3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D4FF51852649651A008E3D79 /* Recourses */,
+				D4FF51852649651A008E3D79 /* Resources */,
 				D4D0D9A3263BF5CF00232F92 /* Models */,
 				D4D0D999263BEF7E00232F92 /* Views */,
 				D448563F263BD80A0057C3B3 /* App.swift */,
@@ -142,13 +142,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D4FF51852649651A008E3D79 /* Recourses */ = {
+		D4FF51852649651A008E3D79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D4FF518A26496DE8008E3D79 /* bin */,
 				D4513790264A5543004D6CE0 /* config.json */,
 			);
-			path = Recourses;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
