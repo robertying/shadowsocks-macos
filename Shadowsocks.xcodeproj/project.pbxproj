@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4485653263BD80C0057C3B3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448563F263BD80A0057C3B3 /* App.swift */; };
+		D4485655263BD80C0057C3B3 /* ServerConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4485640263BD80A0057C3B3 /* ServerConfigView.swift */; };
+		D4485657263BD80C0057C3B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4485641263BD80C0057C3B3 /* Assets.xcassets */; };
+		D4513791264A5543004D6CE0 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = D4513790264A5543004D6CE0 /* config.json */; };
+		D4513795264AB4F1004D6CE0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4513794264AB4F1004D6CE0 /* AboutView.swift */; };
+		D4513798264AC03C004D6CE0 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D4513797264AC03C004D6CE0 /* LaunchAtLogin */; };
+		D4D0D995263BE0EC00232F92 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D993263BE0EC00232F92 /* Method.swift */; };
+		D4D0D998263BE4CC00232F92 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D996263BE4CC00232F92 /* Plugin.swift */; };
+		D4D0D99C263BEFB600232F92 /* ServerConfigDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */; };
+		D4D0D9A2263BF4DC00232F92 /* ServerConfigRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D9A0263BF4DC00232F92 /* ServerConfigRow.swift */; };
+		D4D0D9A6263BF5E200232F92 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D9A4263BF5E200232F92 /* ServerConfig.swift */; };
+		D4D0D9A9263BF9C500232F92 /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D9A7263BF9C500232F92 /* ConfigData.swift */; };
+		D4D75A7B2647FE8B002741D4 /* LocalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A792647FE8B002741D4 /* LocalConfig.swift */; };
+		D4D75A7E2647FF01002741D4 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A7C2647FF01002741D4 /* Protocol.swift */; };
+		D4D75A812648032E002741D4 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A7F2648032E002741D4 /* Mode.swift */; };
+		D4D75A842648044A002741D4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A822648044A002741D4 /* Config.swift */; };
+		D4D75A8726480789002741D4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A8526480789002741D4 /* MainView.swift */; };
+		D4D75A8A264810A1002741D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A88264810A1002741D4 /* AppDelegate.swift */; };
+		D4D75A8D26481D96002741D4 /* ProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A8B26481D96002741D4 /* ProxyType.swift */; };
+		D4D75A9026481EDF002741D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A8E26481EDF002741D4 /* SettingsView.swift */; };
+		D4D75A9226482A30002741D4 /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D75A9126482A30002741D4 /* AdvancedSettingsView.swift */; };
+		D4FF518926496BCE008E3D79 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FF518826496BCE008E3D79 /* ProcessRunner.swift */; };
+		D4FF518B26496DE8008E3D79 /* bin in Resources */ = {isa = PBXBuildFile; fileRef = D4FF518A26496DE8008E3D79 /* bin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D448563F263BD80A0057C3B3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D4485640263BD80A0057C3B3 /* ServerConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigView.swift; sourceTree = "<group>"; };
+		D4485641263BD80C0057C3B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D448564E263BD80C0057C3B3 /* Shadowsocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shadowsocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4485650263BD80C0057C3B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4485651263BD80C0057C3B3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		D4513790264A5543004D6CE0 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		D4513794264AB4F1004D6CE0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		D4D0D993263BE0EC00232F92 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		D4D0D996263BE4CC00232F92 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigDetail.swift; sourceTree = "<group>"; };
+		D4D0D9A0263BF4DC00232F92 /* ServerConfigRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigRow.swift; sourceTree = "<group>"; };
+		D4D0D9A4263BF5E200232F92 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
+		D4D0D9A7263BF9C500232F92 /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
+		D4D75A792647FE8B002741D4 /* LocalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfig.swift; sourceTree = "<group>"; };
+		D4D75A7C2647FF01002741D4 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		D4D75A7F2648032E002741D4 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		D4D75A822648044A002741D4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D4D75A8526480789002741D4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D4D75A88264810A1002741D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4D75A8B26481D96002741D4 /* ProxyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyType.swift; sourceTree = "<group>"; };
+		D4D75A8E26481EDF002741D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D4D75A9126482A30002741D4 /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		D4FF518826496BCE008E3D79 /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		D4FF518A26496DE8008E3D79 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D448564B263BD80C0057C3B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4513798264AC03C004D6CE0 /* LaunchAtLogin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4485639263BD8090057C3B3 = {
+			isa = PBXGroup;
+			children = (
+				D448563E263BD80A0057C3B3 /* Shared */,
+				D448564F263BD80C0057C3B3 /* macOS */,
+				D4485647263BD80C0057C3B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D448563E263BD80A0057C3B3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF51852649651A008E3D79 /* Recourses */,
+				D4D0D9A3263BF5CF00232F92 /* Models */,
+				D4D0D999263BEF7E00232F92 /* Views */,
+				D448563F263BD80A0057C3B3 /* App.swift */,
+				D4D75A88264810A1002741D4 /* AppDelegate.swift */,
+				D4FF518826496BCE008E3D79 /* ProcessRunner.swift */,
+				D4D75A8526480789002741D4 /* MainView.swift */,
+				D4D75A8E26481EDF002741D4 /* SettingsView.swift */,
+				D4485641263BD80C0057C3B3 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D4485647263BD80C0057C3B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D448564E263BD80C0057C3B3 /* Shadowsocks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D448564F263BD80C0057C3B3 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D4485650263BD80C0057C3B3 /* Info.plist */,
+				D4485651263BD80C0057C3B3 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		D4D0D999263BEF7E00232F92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4485640263BD80A0057C3B3 /* ServerConfigView.swift */,
+				D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */,
+				D4D75A9126482A30002741D4 /* AdvancedSettingsView.swift */,
+				D4D0D9A0263BF4DC00232F92 /* ServerConfigRow.swift */,
+				D4513794264AB4F1004D6CE0 /* AboutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4D0D9A3263BF5CF00232F92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4D0D996263BE4CC00232F92 /* Plugin.swift */,
+				D4D0D993263BE0EC00232F92 /* Method.swift */,
+				D4D0D9A4263BF5E200232F92 /* ServerConfig.swift */,
+				D4D75A792647FE8B002741D4 /* LocalConfig.swift */,
+				D4D0D9A7263BF9C500232F92 /* ConfigData.swift */,
+				D4D75A7C2647FF01002741D4 /* Protocol.swift */,
+				D4D75A7F2648032E002741D4 /* Mode.swift */,
+				D4D75A822648044A002741D4 /* Config.swift */,
+				D4D75A8B26481D96002741D4 /* ProxyType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4FF51852649651A008E3D79 /* Recourses */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF518A26496DE8008E3D79 /* bin */,
+				D4513790264A5543004D6CE0 /* config.json */,
+			);
+			path = Recourses;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D448564D263BD80C0057C3B3 /* Shadowsocks (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D448565D263BD80C0057C3B3 /* Build configuration list for PBXNativeTarget "Shadowsocks (macOS)" */;
+			buildPhases = (
+				D448564A263BD80C0057C3B3 /* Sources */,
+				D448564B263BD80C0057C3B3 /* Frameworks */,
+				D448564C263BD80C0057C3B3 /* Resources */,
+				D4513799264AC055004D6CE0 /* Copy “Launch at Login Helper” */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Shadowsocks (macOS)";
+			packageProductDependencies = (
+				D4513797264AC03C004D6CE0 /* LaunchAtLogin */,
+			);
+			productName = "Shadowsocks (macOS)";
+			productReference = D448564E263BD80C0057C3B3 /* Shadowsocks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D448563A263BD8090057C3B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					D448564D263BD80C0057C3B3 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = D448563D263BD8090057C3B3 /* Build configuration list for PBXProject "Shadowsocks" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4485639263BD8090057C3B3;
+			packageReferences = (
+				D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
+			productRefGroup = D4485647263BD80C0057C3B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D448564D263BD80C0057C3B3 /* Shadowsocks (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D448564C263BD80C0057C3B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4FF518B26496DE8008E3D79 /* bin in Resources */,
+				D4485657263BD80C0057C3B3 /* Assets.xcassets in Resources */,
+				D4513791264A5543004D6CE0 /* config.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D4513799264AC055004D6CE0 /* Copy “Launch at Login Helper” */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy “Launch at Login Helper”";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D448564A263BD80C0057C3B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D0D9A2263BF4DC00232F92 /* ServerConfigRow.swift in Sources */,
+				D4D75A812648032E002741D4 /* Mode.swift in Sources */,
+				D4485655263BD80C0057C3B3 /* ServerConfigView.swift in Sources */,
+				D4D75A9026481EDF002741D4 /* SettingsView.swift in Sources */,
+				D4D75A9226482A30002741D4 /* AdvancedSettingsView.swift in Sources */,
+				D4D75A842648044A002741D4 /* Config.swift in Sources */,
+				D4D75A7B2647FE8B002741D4 /* LocalConfig.swift in Sources */,
+				D4485653263BD80C0057C3B3 /* App.swift in Sources */,
+				D4D0D9A9263BF9C500232F92 /* ConfigData.swift in Sources */,
+				D4D75A8A264810A1002741D4 /* AppDelegate.swift in Sources */,
+				D4D0D998263BE4CC00232F92 /* Plugin.swift in Sources */,
+				D4D0D9A6263BF5E200232F92 /* ServerConfig.swift in Sources */,
+				D4D75A8D26481D96002741D4 /* ProxyType.swift in Sources */,
+				D4D0D995263BE0EC00232F92 /* Method.swift in Sources */,
+				D4D0D99C263BEFB600232F92 /* ServerConfigDetail.swift in Sources */,
+				D4FF518926496BCE008E3D79 /* ProcessRunner.swift in Sources */,
+				D4513795264AB4F1004D6CE0 /* AboutView.swift in Sources */,
+				D4D75A8726480789002741D4 /* MainView.swift in Sources */,
+				D4D75A7E2647FF01002741D4 /* Protocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D4485658263BD80C0057C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4485659263BD80C0057C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D448565E263BD80C0057C3B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QX9PZ6H89F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
+				PRODUCT_NAME = Shadowsocks;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D448565F263BD80C0057C3B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QX9PZ6H89F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
+				PRODUCT_NAME = Shadowsocks;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D448563D263BD8090057C3B3 /* Build configuration list for PBXProject "Shadowsocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4485658263BD80C0057C3B3 /* Debug */,
+				D4485659263BD80C0057C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D448565D263BD80C0057C3B3 /* Build configuration list for PBXNativeTarget "Shadowsocks (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D448565E263BD80C0057C3B3 /* Debug */,
+				D448565F263BD80C0057C3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4513797264AC03C004D6CE0 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D448563A263BD8090057C3B3 /* Project object */;
+}

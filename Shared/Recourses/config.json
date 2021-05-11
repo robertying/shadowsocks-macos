@@ -1,0 +1,30 @@
+{
+    "servers": [
+        {
+            "port": 443,
+            "remark": "Example",
+            "method": "aes-256-gcm",
+            "password": "myPassw0rd",
+            "plugin_opts": "tls;host=www.example.com",
+            "plugin": "v2ray-plugin",
+            "address": "233.233.233.233",
+            "disabled": false
+        }
+    ],
+    "locals": [
+        {
+            "local_port": 1080,
+            "protocol": "socks",
+            "local_address": "127.0.0.1"
+        },
+        {
+            "local_port": 1090,
+            "protocol": "http",
+            "local_address": "127.0.0.1"
+        }
+    ],
+    "no_delay": true,
+    "nofile": 65535,
+    "mode": "tcp_only",
+    "ipv6_first": false
+}
