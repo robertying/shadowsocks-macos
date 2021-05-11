@@ -162,6 +162,7 @@
 				D448564B263BD80C0057C3B3 /* Frameworks */,
 				D448564C263BD80C0057C3B3 /* Resources */,
 				D4513799264AC055004D6CE0 /* Copy “Launch at Login Helper” */,
+				D451379A264AD7B7004D6CE0 /* Codesign Bundled Binary */,
 			);
 			buildRules = (
 			);
@@ -241,6 +242,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+		D451379A264AD7B7004D6CE0 /* Codesign Bundled Binary */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Codesign Bundled Binary";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "source \"$SRCROOT\"/.env\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/sslocal\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/v2ray-plugin\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/sslocal\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/v2ray-plugin\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
