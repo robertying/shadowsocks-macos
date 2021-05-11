@@ -259,7 +259,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "source \"$SRCROOT\"/.env\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/sslocal\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/v2ray-plugin\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/sslocal\ncodesign --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/v2ray-plugin\n";
+			shellScript = "source \"$SRCROOT\"/.env\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/sslocal\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/v2ray-plugin\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/sslocal\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/v2ray-plugin\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -415,6 +415,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -440,6 +441,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
