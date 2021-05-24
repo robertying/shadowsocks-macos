@@ -245,7 +245,7 @@
 		};
 		D451379A264AD7B7004D6CE0 /* Codesign Bundled Binary */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -257,7 +257,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "source \"$SRCROOT\"/.env\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/sslocal\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/x86_64/v2ray-plugin\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/sslocal\ncodesign --force --timestamp -o runtime --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$DEVELOPER_ID_APPLICATION_IDENTITY\" \"$SRCROOT\"/Shared/Resources/bin/arm64/v2ray-plugin\n";
 		};
@@ -415,7 +415,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -425,7 +425,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -442,7 +442,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -452,7 +452,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
