@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct MainView: View {
-  let processRunning = NotificationCenter.default
-    .publisher(for: Notification.ProcessRunningStatus)
-
   @State var loading: Bool = false
   @State var running: Bool = false
+
+  let processStatusPublisher = NotificationCenter.default
+    .publisher(for: Notification.ProcessRunningStatus)
 
   var body: some View {
     GeometryReader { gp in
@@ -59,7 +59,7 @@ struct MainView: View {
       }.padding().onAppear {
         self.running = ProcessRunner.running
         self.loading = ProcessRunner.loading
-      }.onReceive(processRunning) { (obj) in
+      }.onReceive(processStatusPublisher) { (obj) in
         if let userInfo = obj.userInfo, let running = userInfo["running"],
           let loading = userInfo["loading"]
         {

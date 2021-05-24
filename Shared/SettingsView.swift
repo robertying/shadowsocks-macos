@@ -22,7 +22,7 @@ struct SettingsView: View {
           Label("About", systemImage: "info.circle")
         }
         .tag(Tabs.about)
-    }.frame(width: 600, height: 300)
+    }.frame(width: 600, height: 350)
   }
 }
 
