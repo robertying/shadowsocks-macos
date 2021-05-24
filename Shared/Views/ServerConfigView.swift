@@ -3,6 +3,11 @@ import SwiftUI
 struct ServerConfigView: View {
   @EnvironmentObject var configData: ConfigData
   @State private var selectedConfig: ServerConfig?
+  @State private var hasOpened: Bool = false
+
+  var window: NSWindow? {
+    NSApplication.shared.windows.last
+  }
 
   private var index: Int? {
     configData.config.serverConfigs.firstIndex(where: { $0.id == selectedConfig?.id })
@@ -55,6 +60,16 @@ struct ServerConfigView: View {
       }
 
       Text("Select a configuration").padding()
+    }.onReceive(
+      NotificationCenter.default
+        .publisher(for: NSWindow.willCloseNotification, object: window)
+    ) { _ in
+      if hasOpened {
+        configData.save()
+        ProcessRunner.start()
+      }
+
+      hasOpened = true
     }
   }
 }
