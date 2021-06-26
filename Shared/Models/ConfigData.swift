@@ -2,23 +2,6 @@ import Combine
 import Foundation
 
 final class ConfigData: ObservableObject {
-  private static var appName: String {
-    Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-  }
-
-  private static var supportFolder: URL {
-    do {
-      return try FileManager.default.url(
-        for: .applicationSupportDirectory,
-        in: .userDomainMask,
-        appropriateFor: nil,
-        create: false
-      ).appendingPathComponent(appName)
-    } catch {
-      fatalError("Can't find documents directory.")
-    }
-  }
-
   private static var exampleConfigUrl: URL {
     guard let file = Bundle.main.url(forResource: "config.json", withExtension: nil)
     else {
@@ -28,33 +11,36 @@ final class ConfigData: ObservableObject {
   }
 
   static var fileURL: URL {
-    return supportFolder.appendingPathComponent("config.json")
+    return DirectoryHelper.supportFolder.appendingPathComponent("config.json")
   }
 
   @Published var config: Config = Config()
 
-  func load() {
+  func load(onLoad: (() -> Void)? = nil, onError: (() -> Void)? = nil) {
     DispatchQueue.global(qos: .background).async { [weak self] in
       guard let data = try? Data(contentsOf: Self.fileURL) else {
         print("Can't find config file. Copying from bundle.")
         do {
           let fileManager = FileManager.default
           try fileManager.createDirectory(
-            at: Self.supportFolder, withIntermediateDirectories: false, attributes: nil)
+            at: DirectoryHelper.supportFolder, withIntermediateDirectories: false, attributes: nil)
           try fileManager.copyItem(at: Self.exampleConfigUrl, to: Self.fileURL)
           print("Copied example config file to support directory.")
-          self?.load()
+          self?.load(onLoad: onLoad, onError: onError)
         } catch {
           print("Unable to copy example config file.")
+          onError?()
         }
         return
       }
       guard let config = try? JSONDecoder().decode(Config.self, from: data) else {
+        onError?()
         fatalError("Can't decode saved config data.")
       }
       DispatchQueue.main.async {
         self?.config = config
         print("Config loaded from file.")
+        onLoad?()
       }
     }
   }

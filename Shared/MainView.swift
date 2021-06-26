@@ -1,11 +1,16 @@
 import SwiftUI
 
 struct MainView: View {
-  @State var loading: Bool = false
-  @State var running: Bool = false
+  @AppStorage("proxyType") var proxyType: ProxyType = ProxyType.bypass_china_ips
+
+  @State var processLoading: Bool = false
+  @State var processRunning: Bool = false
+  @State var aclUpdaterLoading: Bool = false
 
   let processStatusPublisher = NotificationCenter.default
     .publisher(for: Notification.ProcessRunningStatus)
+  let aclUpdaterStatusPublisher = NotificationCenter.default
+    .publisher(for: Notification.AclUpdaterStatus)
 
   var body: some View {
     GeometryReader { gp in
@@ -17,8 +22,11 @@ struct MainView: View {
         }
         HStack {
           Image(systemName: "circle.fill").foregroundColor(
-            Color(running ? .systemGreen : .systemOrange))
-          Text(loading ? (running ? "Stopping" : "Starting") : (running ? "Running" : "Stopped"))
+            Color(processRunning ? .systemGreen : .systemOrange))
+          Text(
+            processLoading
+              ? (processRunning ? "Stopping" : "Starting")
+              : (processRunning ? "Running" : "Stopped"))
         }
         HStack {
           Button(
@@ -28,7 +36,7 @@ struct MainView: View {
             label: {
               Text("Start").frame(width: gp.size.width * 5 / 12)
             }
-          ).disabled(running || loading)
+          ).disabled(processRunning || processLoading)
           Button(
             action: {
               ProcessRunner.stop()
@@ -36,10 +44,32 @@ struct MainView: View {
             label: {
               Text("Stop").frame(width: gp.size.width * 2 / 12)
             }
-          ).disabled(!running || loading)
+          ).disabled(!processRunning || processLoading)
         }.padding(.top, 8)
+        Picker(
+          "",
+          selection: Binding<ProxyType>(
+            get: { proxyType },
+            set: {
+              proxyType = $0
+              ProcessRunner.start()
+            }
+          )
+        ) {
+          Text("Bypass China").tag(ProxyType.bypass_china_ips)
+          Text("Proxy GFW").tag(ProxyType.proxy_gfw)
+          Text("Manual").tag(ProxyType.manual)
+        }.pickerStyle(SegmentedPickerStyle())
         Spacer()
         VStack {
+          Button(
+            action: {
+              AclUpdater.update()
+            },
+            label: {
+              Text("Update ACLs").frame(width: gp.size.width * 8 / 12)
+            }
+          ).disabled(aclUpdaterLoading)
           Button(
             action: {
               NSApp.activate(ignoringOtherApps: true)
@@ -57,14 +87,20 @@ struct MainView: View {
             })
         }
       }.padding().onAppear {
-        self.running = ProcessRunner.running
-        self.loading = ProcessRunner.loading
+        self.processRunning = ProcessRunner.running
+        self.processLoading = ProcessRunner.loading
       }.onReceive(processStatusPublisher) { (obj) in
         if let userInfo = obj.userInfo, let running = userInfo["running"],
           let loading = userInfo["loading"]
         {
-          self.running = running as! Bool
-          self.loading = loading as! Bool
+          self.processRunning = running as! Bool
+          self.processLoading = loading as! Bool
+        }
+      }.onReceive(aclUpdaterStatusPublisher) { (obj) in
+        if let userInfo = obj.userInfo,
+          let loading = userInfo["loading"]
+        {
+          self.aclUpdaterLoading = loading as! Bool
         }
       }.position(x: gp.size.width / 2, y: gp.size.height / 2)
     }
@@ -73,10 +109,11 @@ struct MainView: View {
 
 extension Notification {
   static let ProcessRunningStatus = Notification.Name("ProcessRunningStatus")
+  static let AclUpdaterStatus = Notification.Name("AclUpdaterStatus")
 }
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainView().frame(width: 250, height: 200)
+    MainView().frame(width: 300, height: 250)
   }
 }

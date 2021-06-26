@@ -1,52 +1,6 @@
 import Foundation
 
 final class ProcessRunner {
-  #if arch(arm64)
-    private static let arch = "arm64"
-  #elseif arch(x86_64)
-    private static let arch = "x86_64"
-  #endif
-
-  private static var binUrl: URL {
-    guard let file = Bundle.main.url(forResource: "bin/\(arch)", withExtension: nil)
-    else {
-      fatalError("Couldn't find arch \(arch) in main bundle.")
-    }
-    return file
-  }
-
-  private static var sslocalUrl: URL {
-    guard let file = Bundle.main.url(forResource: "bin/\(arch)/sslocal", withExtension: nil)
-    else {
-      fatalError("Couldn't find sslocal in main bundle.")
-    }
-    return file
-  }
-
-  private static var v2rayPluginUrl: URL {
-    guard let file = Bundle.main.url(forResource: "bin/\(arch)/v2ray-plugin", withExtension: nil)
-    else {
-      fatalError("Couldn't find v2ray-plugin in main bundle.")
-    }
-    return file
-  }
-
-  private static var cacheFolder: URL {
-    do {
-      return try FileManager.default.url(
-        for: .cachesDirectory,
-        in: .userDomainMask,
-        appropriateFor: nil,
-        create: false)
-    } catch {
-      fatalError("Can't find cache directory.")
-    }
-  }
-
-  private static var pidFileUrl: URL {
-    return cacheFolder.appendingPathComponent("sslocal.pid")
-  }
-
   private static var task: Process!
 
   static var loading: Bool = false {
@@ -81,7 +35,58 @@ final class ProcessRunner {
     try? killTask.run()
   }
 
+  private static let configData = ConfigData()
+
+  private static func unsetProxy() {
+    let proxyTask = Process()
+    proxyTask.launchPath =
+      DirectoryHelper.binRootFolder.appendingPathComponent("networksetup.sh").path
+    proxyTask.arguments = ["unset"]
+
+    var terminateObserver: NSObjectProtocol!
+    terminateObserver = NotificationCenter.default.addObserver(
+      forName: Process.didTerminateNotification, object: proxyTask, queue: nil
+    ) { notification in
+      print("CRIT: system proxy unset.")
+      NotificationCenter.default.removeObserver(terminateObserver!)
+    }
+
+    try? proxyTask.run()
+  }
+
+  private static func setProxy() {
+    let proxyType =
+      UserDefaults.standard.string(forKey: "proxyType") ?? ProxyType.bypass_china_ips.rawValue
+    if proxyType == ProxyType.manual.rawValue {
+      return
+    }
+
+    configData.load(
+      onLoad: {
+        let proxyTask = Process()
+        proxyTask.launchPath =
+          DirectoryHelper.binRootFolder.appendingPathComponent("networksetup.sh").path
+
+        let httpConfig = configData.config.localConfigs.filter { $0.proto == .http }[0]
+        proxyTask.arguments = ["set", httpConfig.localAddress, String(httpConfig.localPort)]
+
+        var terminateObserver: NSObjectProtocol!
+        terminateObserver = NotificationCenter.default.addObserver(
+          forName: Process.didTerminateNotification, object: proxyTask, queue: nil
+        ) { notification in
+          print("CRIT: system proxy set.")
+          NotificationCenter.default.removeObserver(terminateObserver!)
+        }
+
+        try? proxyTask.run()
+      },
+      onError: {
+        unsetProxy()
+      })
+  }
+
   static func cleanup() {
+    unsetProxy()
     kill("sslocal")
     kill("v2ray-plugin")
   }
@@ -93,13 +98,23 @@ final class ProcessRunner {
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       task = Process()
-      task.currentDirectoryURL = binUrl
+      task.currentDirectoryURL = DirectoryHelper.binFolder
       var environment = ProcessInfo.processInfo.environment
       environment["PATH"] =
-        (environment["PATH"] ?? "") + ":\(v2rayPluginUrl.deletingLastPathComponent().path)"
+        (environment["PATH"] ?? "")
+        + ":\(DirectoryHelper.v2rayPluginUrl.deletingLastPathComponent().path)"
       task.environment = environment
-      task.executableURL = sslocalUrl
-      task.arguments = ["-c", ConfigData.fileURL.path]
+      task.executableURL = DirectoryHelper.sslocalUrl
+
+      let proxyType =
+        UserDefaults.standard.string(forKey: "proxyType") ?? ProxyType.bypass_china_ips.rawValue
+      if proxyType == ProxyType.manual.rawValue {
+        task.arguments = ["-c", ConfigData.fileURL.path]
+      } else {
+        let aclUrl = DirectoryHelper.supportFolder.appendingPathComponent(proxyType)
+          .appendingPathExtension("acl")
+        task.arguments = ["-c", ConfigData.fileURL.path, "--acl", aclUrl.path]
+      }
 
       let outputPipe = Pipe()
       let errorPipe = Pipe()
@@ -142,8 +157,8 @@ final class ProcessRunner {
       ) { notification in
         running = false
         loading = false
-        print("CRIT: sslocal terminated.")
         NotificationCenter.default.removeObserver(terminateObserver!)
+        print("CRIT: sslocal terminated.")
       }
 
       print("CRIT: sslocal starting.")
@@ -154,6 +169,7 @@ final class ProcessRunner {
         try task.run()
         running = true
         print("CRIT: sslocal started.")
+        setProxy()
       } catch {
         running = false
         print("CRIT: sslocal failed to start.")
@@ -163,6 +179,7 @@ final class ProcessRunner {
 
   static func stop() {
     loading = true
+    unsetProxy()
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
       print("CRIT: sslocal terminating.")

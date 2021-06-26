@@ -13,6 +13,9 @@
 		D4513791264A5543004D6CE0 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = D4513790264A5543004D6CE0 /* config.json */; };
 		D4513795264AB4F1004D6CE0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4513794264AB4F1004D6CE0 /* AboutView.swift */; };
 		D4513798264AC03C004D6CE0 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D4513797264AC03C004D6CE0 /* LaunchAtLogin */; };
+		D4529C4726859EFB00410992 /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4529C4626859EFB00410992 /* DirectoryHelper.swift */; };
+		D478898A2684E46E00DD986E /* acl in Resources */ = {isa = PBXBuildFile; fileRef = D47889892684E46E00DD986E /* acl */; };
+		D4953F202684D6EE00D05B49 /* AclUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4953F1F2684D6EE00D05B49 /* AclUpdater.swift */; };
 		D4D0D995263BE0EC00232F92 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D993263BE0EC00232F92 /* Method.swift */; };
 		D4D0D998263BE4CC00232F92 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D996263BE4CC00232F92 /* Plugin.swift */; };
 		D4D0D99C263BEFB600232F92 /* ServerConfigDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */; };
@@ -41,6 +44,9 @@
 		D4485651263BD80C0057C3B3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		D4513790264A5543004D6CE0 /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		D4513794264AB4F1004D6CE0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		D4529C4626859EFB00410992 /* DirectoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryHelper.swift; sourceTree = "<group>"; };
+		D47889892684E46E00DD986E /* acl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = acl; sourceTree = "<group>"; };
+		D4953F1F2684D6EE00D05B49 /* AclUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AclUpdater.swift; sourceTree = "<group>"; };
 		D4D0D993263BE0EC00232F92 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		D4D0D996263BE4CC00232F92 /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigDetail.swift; sourceTree = "<group>"; };
@@ -89,7 +95,7 @@
 				D4D0D999263BEF7E00232F92 /* Views */,
 				D448563F263BD80A0057C3B3 /* App.swift */,
 				D4D75A88264810A1002741D4 /* AppDelegate.swift */,
-				D4FF518826496BCE008E3D79 /* ProcessRunner.swift */,
+				D4529C4526859EC800410992 /* Helpers */,
 				D4D75A8526480789002741D4 /* MainView.swift */,
 				D4D75A8E26481EDF002741D4 /* SettingsView.swift */,
 				D4485641263BD80C0057C3B3 /* Assets.xcassets */,
@@ -112,6 +118,16 @@
 				D4485651263BD80C0057C3B3 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		D4529C4526859EC800410992 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF518826496BCE008E3D79 /* ProcessRunner.swift */,
+				D4953F1F2684D6EE00D05B49 /* AclUpdater.swift */,
+				D4529C4626859EFB00410992 /* DirectoryHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D4D0D999263BEF7E00232F92 /* Views */ = {
@@ -145,6 +161,7 @@
 		D4FF51852649651A008E3D79 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D47889892684E46E00DD986E /* acl */,
 				D4FF518A26496DE8008E3D79 /* bin */,
 				D4513790264A5543004D6CE0 /* config.json */,
 			);
@@ -219,6 +236,7 @@
 				D4FF518B26496DE8008E3D79 /* bin in Resources */,
 				D4485657263BD80C0057C3B3 /* Assets.xcassets in Resources */,
 				D4513791264A5543004D6CE0 /* config.json in Resources */,
+				D478898A2684E46E00DD986E /* acl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4953F202684D6EE00D05B49 /* AclUpdater.swift in Sources */,
 				D4D0D9A2263BF4DC00232F92 /* ServerConfigRow.swift in Sources */,
 				D4D75A812648032E002741D4 /* Mode.swift in Sources */,
 				D4485655263BD80C0057C3B3 /* ServerConfigView.swift in Sources */,
@@ -275,6 +294,7 @@
 				D4D75A9226482A30002741D4 /* AdvancedSettingsView.swift in Sources */,
 				D4D75A842648044A002741D4 /* Config.swift in Sources */,
 				D4D75A7B2647FE8B002741D4 /* LocalConfig.swift in Sources */,
+				D4529C4726859EFB00410992 /* DirectoryHelper.swift in Sources */,
 				D4485653263BD80C0057C3B3 /* App.swift in Sources */,
 				D4D0D9A9263BF9C500232F92 /* ConfigData.swift in Sources */,
 				D4D75A8A264810A1002741D4 /* AppDelegate.swift in Sources */,
@@ -415,7 +435,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -425,7 +445,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -442,7 +462,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QX9PZ6H89F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -452,7 +472,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;

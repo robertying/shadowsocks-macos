@@ -7,7 +7,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   func applicationDidFinishLaunching(_ notification: Notification) {
     let mainView = MainView()
     let view = NSHostingView(rootView: mainView)
-    view.frame = NSRect(x: 0, y: 0, width: 250, height: 200)
+    view.frame = NSRect(x: 0, y: 0, width: 300, height: 250)
 
     let menuItem = NSMenuItem()
     menuItem.view = view
@@ -21,7 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusBarIcon = NSImage(named: NSImage.Name("StatusBarIcon"))!
     self.statusBarItem.button?.image = statusBarIcon
 
-    ProcessRunner.start()
+    DispatchQueue.global(qos: .background).async {
+      AclUpdater.copyAclFilesFromBundleToSupportFolder()
+
+      DispatchQueue.main.async {
+        ProcessRunner.start()
+      }
+    }
   }
 
   func applicationWillTerminate(_ notification: Notification) {
