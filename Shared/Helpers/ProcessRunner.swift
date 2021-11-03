@@ -159,6 +159,7 @@ final class ProcessRunner {
         loading = false
         NotificationCenter.default.removeObserver(terminateObserver!)
         print("CRIT: sslocal terminated.")
+        unsetProxy()
       }
 
       print("CRIT: sslocal starting.")
