@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D44677F928F901FF00533A71 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D44677F828F901FF00533A71 /* LaunchAtLogin */; };
 		D4485653263BD80C0057C3B3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448563F263BD80A0057C3B3 /* App.swift */; };
 		D4485655263BD80C0057C3B3 /* ServerConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4485640263BD80A0057C3B3 /* ServerConfigView.swift */; };
 		D4485657263BD80C0057C3B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4485641263BD80C0057C3B3 /* Assets.xcassets */; };
 		D4513791264A5543004D6CE0 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = D4513790264A5543004D6CE0 /* config.json */; };
 		D4513795264AB4F1004D6CE0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4513794264AB4F1004D6CE0 /* AboutView.swift */; };
-		D4513798264AC03C004D6CE0 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D4513797264AC03C004D6CE0 /* LaunchAtLogin */; };
 		D4529C4726859EFB00410992 /* DirectoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4529C4626859EFB00410992 /* DirectoryHelper.swift */; };
 		D478898A2684E46E00DD986E /* acl in Resources */ = {isa = PBXBuildFile; fileRef = D47889892684E46E00DD986E /* acl */; };
 		D4953F202684D6EE00D05B49 /* AclUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4953F1F2684D6EE00D05B49 /* AclUpdater.swift */; };
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4513798264AC03C004D6CE0 /* LaunchAtLogin in Frameworks */,
+				D44677F928F901FF00533A71 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +187,7 @@
 			);
 			name = "Shadowsocks (macOS)";
 			packageProductDependencies = (
-				D4513797264AC03C004D6CE0 /* LaunchAtLogin */,
+				D44677F828F901FF00533A71 /* LaunchAtLogin */,
 			);
 			productName = "Shadowsocks (macOS)";
 			productReference = D448564E263BD80C0057C3B3 /* Shadowsocks.app */;
@@ -200,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					D448564D263BD80C0057C3B3 = {
 						CreatedOnToolsVersion = 12.5;
@@ -208,7 +208,7 @@
 				};
 			};
 			buildConfigurationList = D448563D263BD8090057C3B3 /* Build configuration list for PBXProject "Shadowsocks" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,7 +217,7 @@
 			);
 			mainGroup = D4485639263BD8090057C3B3;
 			packageReferences = (
-				D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				D44677F728F901FF00533A71 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = D4485647263BD80C0057C3B3 /* Products */;
 			projectDirPath = "";
@@ -348,6 +348,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -408,6 +409,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -436,17 +438,20 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = QX9PZ6H89F;
+				CURRENT_PROJECT_VERSION = 22;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Shadowsocks;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -463,17 +468,20 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = QX9PZ6H89F;
+				CURRENT_PROJECT_VERSION = 22;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Shadowsocks;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5.0;
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -505,20 +513,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+		D44677F728F901FF00533A71 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D4513797264AC03C004D6CE0 /* LaunchAtLogin */ = {
+		D44677F828F901FF00533A71 /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4513796264AC03C004D6CE0 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = D44677F728F901FF00533A71 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
