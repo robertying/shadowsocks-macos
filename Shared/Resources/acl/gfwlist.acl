@@ -170,6 +170,7 @@
 (?:^|\.)ablwang\.com$
 (?:^|\.)aboluowang\.com$
 (?:^|\.)about\.google$
+(?:^|\.)about\.me$
 (?:^|\.)aboutgfw\.com$
 (?:^|\.)abs\.edu$
 (?:^|\.)ac\.jiruan\.net$
@@ -462,6 +463,7 @@
 (?:^|\.)baijie\.org$
 (?:^|\.)bailandaily\.com$
 (?:^|\.)baixing\.me$
+(?:^|\.)baizhi\.org$
 (?:^|\.)bakgeekhome\.tk$
 (?:^|\.)banana-vpn\.com$
 (?:^|\.)band\.us$
@@ -484,7 +486,6 @@
 (?:^|\.)bastillepost\.com$
 (?:^|\.)bayvoice\.net$
 (?:^|\.)bb-chat\.tv$
-(?:^|\.)bb\.ttv\.com\.tw$
 (?:^|\.)bbc\.co\.uk$
 (?:^|\.)bbc\.com$
 (?:^|\.)bbc\.in$
@@ -807,6 +808,7 @@
 (?:^|\.)bullguard\.com$
 (?:^|\.)bullog\.org$
 (?:^|\.)bullogger\.com$
+(?:^|\.)bumingbai\.net$
 (?:^|\.)bunbunhk\.com$
 (?:^|\.)busayari\.com$
 (?:^|\.)business-humanrights\.org$
@@ -989,6 +991,7 @@
 (?:^|\.)chinadigitaltimes\.net$
 (?:^|\.)chinaelections\.org$
 (?:^|\.)chinaeweekly\.com$
+(?:^|\.)chinafile\.com$
 (?:^|\.)chinafreepress\.org$
 (?:^|\.)chinagate\.com$
 (?:^|\.)chinageeks\.org$
@@ -1423,6 +1426,7 @@
 (?:^|\.)dotvpn\.com$
 (?:^|\.)doub\.io$
 (?:^|\.)doubibackup\.com$
+(?:^|\.)doublethinklab\.org$
 (?:^|\.)doubmirror\.cf$
 (?:^|\.)dougscripts\.com$
 (?:^|\.)douhokanko\.net$
@@ -1981,6 +1985,7 @@
 (?:^|\.)gamez\.com\.tw$
 (?:^|\.)gamousa\.com$
 (?:^|\.)ganges\.com$
+(?:^|\.)ganjing\.com$
 (?:^|\.)ganjingworld\.com$
 (?:^|\.)gaoming\.net$
 (?:^|\.)gaopi\.net$
@@ -2505,6 +2510,7 @@
 (?:^|\.)hhdcb3office\.org$
 (?:^|\.)hhthesakyatrizin\.org$
 (?:^|\.)hi-on\.org\.tw$
+(?:^|\.)hiccears\.com$
 (?:^|\.)hidden-advent\.org$
 (?:^|\.)hide\.me$
 (?:^|\.)hidecloud\.com$
@@ -2606,6 +2612,7 @@
 (?:^|\.)hmvdigital\.com$
 (?:^|\.)hnjhj\.com$
 (?:^|\.)hnntube\.com$
+(?:^|\.)hojemacau\.com\.mo$
 (?:^|\.)hola\.com$
 (?:^|\.)hola\.org$
 (?:^|\.)holymountaincn\.com$
@@ -2631,6 +2638,7 @@
 (?:^|\.)hostloc\.com$
 (?:^|\.)hotair\.com$
 (?:^|\.)hotav\.tv$
+(?:^|\.)hotcoin\.com$
 (?:^|\.)hotels\.cn$
 (?:^|\.)hotfrog\.com\.tw$
 (?:^|\.)hotgoo\.com$
@@ -2689,6 +2697,7 @@
 (?:^|\.)hulkshare\.com$
 (?:^|\.)hulu\.com$
 (?:^|\.)huluim\.com$
+(?:^|\.)humanrightspressawards\.org$
 (?:^|\.)hung-ya\.com$
 (?:^|\.)hungerstrikeforaids\.org$
 (?:^|\.)huobi\.co$
@@ -2821,6 +2830,7 @@
 (?:^|\.)instagram\.com$
 (?:^|\.)instanthq\.com$
 (?:^|\.)institut-tibetain\.org$
+(?:^|\.)interactivebrokers\.com$
 (?:^|\.)international-news\.newsmagazine\.asia$
 (?:^|\.)internet\.org$
 (?:^|\.)internetdefenseleague\.org$
@@ -3077,6 +3087,7 @@
 (?:^|\.)koranmandarin\.com$
 (?:^|\.)korenan2\.com$
 (?:^|\.)kqes\.net$
+(?:^|\.)kraken\.com$
 (?:^|\.)ksdl\.org$
 (?:^|\.)ksnews\.com\.tw$
 (?:^|\.)kspcoin\.com$
@@ -3466,6 +3477,7 @@
 (?:^|\.)money-link\.com\.tw$
 (?:^|\.)moneyhome\.biz$
 (?:^|\.)monitorchina\.org$
+(?:^|\.)monocloud\.me$
 (?:^|\.)monster\.com$
 (?:^|\.)moodyz\.com$
 (?:^|\.)moon\.fm$
@@ -3641,6 +3653,7 @@
 (?:^|\.)newhighlandvision\.com$
 (?:^|\.)newipnow\.com$
 (?:^|\.)newlandmagazine\.com\.au$
+(?:^|\.)newmitbbs\.com$
 (?:^|\.)newnews\.ca$
 (?:^|\.)news\.cnyes\.com$
 (?:^|\.)news\.hk\.msn\.com$
@@ -3869,6 +3882,7 @@
 (?:^|\.)ontrac\.com$
 (?:^|\.)oopsforum\.com$
 (?:^|\.)open\.com\.hk$
+(?:^|\.)openai\.com$
 (?:^|\.)openallweb\.com$
 (?:^|\.)opendemocracy\.net$
 (?:^|\.)opendn\.xyz$
@@ -3961,6 +3975,7 @@
 (?:^|\.)pastebin\.com$
 (?:^|\.)pastie\.org$
 (?:^|\.)patreon\.com$
+(?:^|\.)pawoo\.net$
 (?:^|\.)paxful\.com$
 (?:^|\.)pbs\.org$
 (?:^|\.)pbwiki\.com$
@@ -4259,7 +4274,6 @@
 (?:^|\.)rateyourmusic\.com$
 (?:^|\.)rationalwiki\.org$
 (?:^|\.)raw\.githack\.com$
-(?:^|\.)raw\.githubusercontent\.com$
 (?:^|\.)rawgit\.com$
 (?:^|\.)rawgithub\.com$
 (?:^|\.)razyboard\.com$
@@ -4401,6 +4415,7 @@
 (?:^|\.)salvation\.org\.hk$
 (?:^|\.)samair\.ru$
 (?:^|\.)sambhota\.org$
+(?:^|\.)sankakucomplex\.com$
 (?:^|\.)sankei\.com$
 (?:^|\.)sanmin\.com\.tw$
 (?:^|\.)sapikachu\.net$
@@ -4689,6 +4704,7 @@
 (?:^|\.)spreadshirt\.es$
 (?:^|\.)spring4u\.info$
 (?:^|\.)springboardplatform\.com$
+(?:^|\.)springwood\.me$
 (?:^|\.)sprite\.org$
 (?:^|\.)sproutcore\.com$
 (?:^|\.)sproxy\.info$
@@ -4982,6 +4998,7 @@
 (?:^|\.)thlib\.org$
 (?:^|\.)thomasbernhard\.org$
 (?:^|\.)thongdreams\.com$
+(?:^|\.)threadreaderapp\.com$
 (?:^|\.)threatchaos\.com$
 (?:^|\.)throughnightsfire\.com$
 (?:^|\.)thumbzilla\.com$
@@ -5188,6 +5205,7 @@
 (?:^|\.)tsunagarumon\.com$
 (?:^|\.)tt1069\.com$
 (?:^|\.)tttan\.com$
+(?:^|\.)ttv\.com\.tw$
 (?:^|\.)ttvnw\.net$
 (?:^|\.)tu8964\.com$
 (?:^|\.)tubaholic\.com$
@@ -5659,6 +5677,7 @@
 (?:^|\.)webjb\.org$
 (?:^|\.)weblagu\.com$
 (?:^|\.)webmproject\.org$
+(?:^|\.)webpkgcache\.com$
 (?:^|\.)webrtc\.org$
 (?:^|\.)webrush\.net$
 (?:^|\.)webs-tv\.net$
@@ -6005,6 +6024,7 @@
 (?:^|\.)yong\.hu$
 (?:^|\.)yorkbbs\.ca$
 (?:^|\.)you-get\.org$
+(?:^|\.)you\.com$
 (?:^|\.)youdontcare\.com$
 (?:^|\.)youjizz\.com$
 (?:^|\.)youmaker\.com$
