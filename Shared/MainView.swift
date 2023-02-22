@@ -73,7 +73,11 @@ struct MainView: View {
           Button(
             action: {
               NSApp.activate(ignoringOtherApps: true)
-              NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+              if #available(macOS 13, *) {
+                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+              } else {
+                NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+              }
             },
             label: {
               Text("Open Settings").frame(width: gp.size.width * 8 / 12)
