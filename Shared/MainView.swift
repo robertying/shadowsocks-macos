@@ -58,6 +58,7 @@ struct MainView: View {
         ) {
           Text("Bypass China").tag(ProxyType.bypass_china_ips)
           Text("Proxy GFW").tag(ProxyType.proxy_gfw)
+          Text("Global").tag(ProxyType.bypass_lan)
           Text("Manual").tag(ProxyType.manual)
         }.pickerStyle(SegmentedPickerStyle())
         Spacer()
@@ -118,6 +119,6 @@ extension Notification {
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainView().frame(width: 300, height: 250)
+    MainView().frame(width: 320, height: 250)
   }
 }
