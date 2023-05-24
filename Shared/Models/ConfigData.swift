@@ -34,8 +34,19 @@ final class ConfigData: ObservableObject {
         return
       }
       guard let config = try? JSONDecoder().decode(Config.self, from: data) else {
-        onError?()
-        fatalError("Can't decode saved config data.")
+        print("Config file corrupted. Copying from bundle.")
+        do {
+          let fileManager = FileManager.default
+          try fileManager.createDirectory(
+            at: DirectoryHelper.supportFolder, withIntermediateDirectories: false, attributes: nil)
+          try fileManager.copyItem(at: Self.exampleConfigUrl, to: Self.fileURL)
+          print("Copied example config file to support directory.")
+          self?.load(onLoad: onLoad, onError: onError)
+        } catch {
+          print("Unable to copy example config file.")
+          onError?()
+        }
+        return
       }
       DispatchQueue.main.async {
         self?.config = config
