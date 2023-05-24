@@ -52,7 +52,7 @@
 		D4D0D99A263BEFB600232F92 /* ServerConfigDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigDetail.swift; sourceTree = "<group>"; };
 		D4D0D9A0263BF4DC00232F92 /* ServerConfigRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigRow.swift; sourceTree = "<group>"; };
 		D4D0D9A4263BF5E200232F92 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
-		D4D0D9A7263BF9C500232F92 /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
+		D4D0D9A7263BF9C500232F92 /* ConfigData.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; tabWidth = 2; };
 		D4D75A792647FE8B002741D4 /* LocalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfig.swift; sourceTree = "<group>"; };
 		D4D75A7C2647FF01002741D4 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		D4D75A7F2648032E002741D4 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
@@ -439,7 +439,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -452,7 +452,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.11.0;
+				MARKETING_VERSION = 1.12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -469,7 +469,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -482,7 +482,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.11.0;
+				MARKETING_VERSION = 1.12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
