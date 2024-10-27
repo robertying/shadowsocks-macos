@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -201,7 +201,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					D448564D263BD80C0057C3B3 = {
 						CreatedOnToolsVersion = 12.5;
@@ -209,7 +209,6 @@
 				};
 			};
 			buildConfigurationList = D448563D263BD8090057C3B3 /* Build configuration list for PBXProject "Shadowsocks" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -220,6 +219,7 @@
 			packageReferences = (
 				D44677F728F901FF00533A71 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = D4485647263BD80C0057C3B3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -380,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -439,7 +441,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -451,8 +453,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
@@ -469,7 +471,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = G896QC26MC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -481,8 +483,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.robertying.Shadowsocks;
 				PRODUCT_NAME = Shadowsocks;
 				SDKROOT = macosx;
