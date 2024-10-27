@@ -18,7 +18,6 @@ private struct Label: View {
 
 struct ServerConfigDetail: View {
   @EnvironmentObject var config: ServerConfig
-  @State private var showPassword = false
 
   let saveData: () -> Void
 
@@ -55,18 +54,7 @@ struct ServerConfigDetail: View {
         }
         HStack {
           Label(text: "Password *", minWidth: labelWidth)
-          if showPassword {
-            TextField("", text: $config.password).disableAutocorrection(true)
-          } else {
-            SecureField("", text: $config.password)
-          }
-          Button(
-            action: {
-              self.showPassword.toggle()
-            },
-            label: {
-              Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
-            })
+          TextField("", text: $config.password).disableAutocorrection(true)
         }
         Picker(selection: $config.plugin, label: Label(text: "Plugin", minWidth: labelWidth)) {
           Text("v2ray-plugin").tag(Plugin.v2ray_plugin)

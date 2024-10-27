@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MainView: View {
+  @Environment(\.openSettings) private var openSettings
+
   @AppStorage("proxyType") var proxyType: ProxyType = ProxyType.bypass_china_ips
 
   @State var processLoading: Bool = false
@@ -74,11 +76,7 @@ struct MainView: View {
           Button(
             action: {
               NSApp.activate(ignoringOtherApps: true)
-              if #available(macOS 13, *) {
-                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-              } else {
-                NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
-              }
+              openSettings()
             },
             label: {
               Text("Open Settings").frame(width: gp.size.width * 8 / 12)
