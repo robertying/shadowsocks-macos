@@ -3,7 +3,8 @@ import Foundation
 
 final class ConfigData: ObservableObject {
   private static var exampleConfigUrl: URL {
-    guard let file = Bundle.main.url(forResource: "config.json", withExtension: nil)
+    guard
+      let file = Bundle.main.url(forResource: "config.json", withExtension: nil)
     else {
       fatalError("Couldn't find example config file in main bundle.")
     }
@@ -23,7 +24,8 @@ final class ConfigData: ObservableObject {
         do {
           let fileManager = FileManager.default
           try fileManager.createDirectory(
-            at: DirectoryHelper.supportFolder, withIntermediateDirectories: false, attributes: nil)
+            at: DirectoryHelper.supportFolder,
+            withIntermediateDirectories: false, attributes: nil)
           try fileManager.copyItem(at: Self.exampleConfigUrl, to: Self.fileURL)
           print("Copied example config file to support directory.")
           self?.load(onLoad: onLoad, onError: onError)
@@ -33,12 +35,14 @@ final class ConfigData: ObservableObject {
         }
         return
       }
-      guard let config = try? JSONDecoder().decode(Config.self, from: data) else {
+      guard let config = try? JSONDecoder().decode(Config.self, from: data)
+      else {
         print("Config file corrupted. Copying from bundle.")
         do {
           let fileManager = FileManager.default
           try fileManager.createDirectory(
-            at: DirectoryHelper.supportFolder, withIntermediateDirectories: false, attributes: nil)
+            at: DirectoryHelper.supportFolder,
+            withIntermediateDirectories: false, attributes: nil)
           try fileManager.copyItem(at: Self.exampleConfigUrl, to: Self.fileURL)
           print("Copied example config file to support directory.")
           self?.load(onLoad: onLoad, onError: onError)

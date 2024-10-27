@@ -1,6 +1,6 @@
 enum Protocol: String, CaseIterable, Identifiable, Codable {
-  case socks = "socks"
-  case http = "http"
+    case socks = "socks"
+    case http = "http"
 
-  var id: String { self.rawValue }
+    var id: String { self.rawValue }
 }
