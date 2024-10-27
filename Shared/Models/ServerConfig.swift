@@ -31,7 +31,7 @@ final class ServerConfig: Hashable, Codable, Identifiable, ObservableObject {
     id = UUID()
     address = ""
     port = 443
-    method = Method.aes_256_gcm
+    method = Method.aes_128_gcm
     password = ""
     plugin = Plugin.v2ray_plugin
     pluginOpts = "tls;host=www.example.com"
@@ -44,7 +44,7 @@ final class ServerConfig: Hashable, Codable, Identifiable, ObservableObject {
     remark = try? container.decode(String.self, forKey: .remark)
     address = (try? container.decode(String.self, forKey: .address)) ?? ""
     port = (try? container.decode(UInt16.self, forKey: .port)) ?? 443
-    method = (try? container.decode(Method.self, forKey: .method)) ?? Method.aes_256_gcm
+    method = (try? container.decode(Method.self, forKey: .method)) ?? Method.aes_128_gcm
     password = (try? container.decode(String.self, forKey: .password)) ?? ""
     plugin = (try? container.decode(Plugin.self, forKey: .plugin)) ?? Plugin.v2ray_plugin
     pluginOpts =
