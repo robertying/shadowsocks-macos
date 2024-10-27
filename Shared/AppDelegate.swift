@@ -5,6 +5,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menu: NSMenu!
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        UserDefaults.standard.register(defaults: ["previouslyStopped": true])
+
         let mainView = MainView()
         let view = NSHostingView(rootView: mainView)
         view.frame = NSRect(x: 0, y: 0, width: 300, height: 250)
@@ -26,7 +28,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             AclUpdater.copyAclFilesFromBundleToSupportFolder()
 
             DispatchQueue.main.async {
-                ProcessRunner.start()
+                let previouslyStopped =
+                    UserDefaults.standard.bool(forKey: "previouslyStopped")
+                if !previouslyStopped {
+                    ProcessRunner.start()
+                }
             }
         }
     }

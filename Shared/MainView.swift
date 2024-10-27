@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @Environment(\.openSettings) private var openSettings
 
+    @AppStorage("previouslyStopped") var previouslyStopped: Bool = true
     @AppStorage("proxyType") var proxyType: ProxyType = ProxyType
         .bypass_china_ips
 
@@ -35,6 +36,7 @@ struct MainView: View {
                 HStack {
                     Button(
                         action: {
+                            previouslyStopped = false
                             ProcessRunner.start()
                         },
                         label: {
@@ -43,6 +45,7 @@ struct MainView: View {
                     ).disabled(processRunning || processLoading)
                     Button(
                         action: {
+                            previouslyStopped = true
                             ProcessRunner.stop()
                         },
                         label: {
