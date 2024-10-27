@@ -10,7 +10,7 @@ struct AboutView: View {
       Text(
         "Version \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) (Build \(Bundle.main.infoDictionary!["CFBundleVersion"] as! String))"
       )
-      Text("© 2023 Rui Ying")
+      Text("© 2024 Rui Ying")
     }.padding()
   }
 }
